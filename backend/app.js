@@ -1,10 +1,25 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 const app = express();
+
+mongoose
+  .connect(
+    "mongodb+srv://igorlira:1234@cluster0.w4vorhm.mongodb.net/node-angular?retryWrites=true&w=majority"
+  )
+  .then(() => console.log("Connected to database!"))
+  .catch(() => console.log("Not connected"));
+
+const Post = require("./models/post");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
-    "Acess-Control-Allow-Header",
+    "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
   res.setHeader(
@@ -13,22 +28,22 @@ app.use((req, res, next) => {
   );
   next();
 });
-app.use("/api/posts", (req, res, next) => {
-  const posts = [
-    {
-      id: "12312fdsaf",
-      title: "First server-side post",
-      content: "First server-side content",
-    },
-    {
-      id: "23421234asdf",
-      title: "Second server-side post",
-      content: "Second server-side content",
-    },
-  ];
-  res.status(200).json({
-    message: "Posts fetched successfully!",
-    posts: posts,
+
+app.post("/api/posts", (req, res, next) => {
+  const post = new Post({
+    title: req.body.title,
+    content: req.body.content,
+  });
+  post.save();
+  res.status(201).json({ message: "Post added successfully!" });
+});
+
+app.get("/api/posts", (req, res, next) => {
+  Post.find().then((documents) => {
+    res.status(200).json({
+      message: "Posts fetched successfully!",
+      posts: documents,
+    });
   });
 });
 
