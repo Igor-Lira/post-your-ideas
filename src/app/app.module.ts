@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { PostCreateComponent } from './post/post-create/post-create.component';
 import { HeaderComponent } from './header/header-component';
 import { PostListComponent } from './post/post-list/post-list-component';
@@ -28,6 +29,7 @@ import { PostListComponent } from './post/post-list/post-list-component';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
