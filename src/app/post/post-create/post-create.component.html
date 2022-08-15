@@ -5,7 +5,7 @@
         matInput
         type="text"
         name="title"
-        [ngModel]="this.post.title"
+        [ngModel]="this.post?.title"
         required
         placeholder="Post Title"
       />
@@ -17,7 +17,7 @@
         rows="6"
         #postInput
         name="content"
-        [ngModel]="this.post.content"
+        [ngModel]="this.post?.content"
         required
         placeholder="Post Content"
       >
