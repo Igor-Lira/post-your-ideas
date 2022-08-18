@@ -21,9 +21,13 @@
     </div>
     <div
       class="image-preview"
-      *ngIf="this.imagePreview !== '' && this.imagePreview"
+      *ngIf="
+        this.imagePreview !== '' &&
+        this.imagePreview &&
+        this.form.get('image')?.valid
+      "
     >
-      <img [src]="this.imagePreview" alt="" />
+      <img [src]="this.imagePreview" [alt]="this.form.value.title" />
     </div>
     <mat-form-field>
       <textarea
