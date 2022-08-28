@@ -19,3 +19,9 @@
 <p *ngIf="this.posts.length <= 0 && !isLoading" class="info-text mat-body-1">
   No Posts added yet!
 </p>
+<mat-paginator
+  [length]="this.totalPosts"
+  [pageSize]="this.postsPerPage"
+  [pageSizeOptions]="this.pageSizeOptions"
+  (page)="this.onChangedPage($event)"
+></mat-paginator>
