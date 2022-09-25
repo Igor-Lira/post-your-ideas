@@ -6,17 +6,16 @@ const userRoutes = require("./routes/user");
 const path = require("path");
 
 const app = express();
-
 mongoose
   .connect(
-    "mongodb+srv://igorlira:1234@cluster0.w4vorhm.mongodb.net/node-angular?retryWrites=true&w=majority"
+    `mongodb+srv://igorlira:${process.env.MONGO_ATLAS_PW}@cluster0.w4vorhm.mongodb.net/node-angular?retryWrites=true&w=majority`
   )
   .then(() => console.log("Connected to database!"))
   .catch(() => console.log("Not connected"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/images", express.static(path.join("backend/images")));
+app.use("/images", express.static(path.join("images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
