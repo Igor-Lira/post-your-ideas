@@ -1,27 +1,29 @@
-# MeanCourse
+# Post Your Ideas!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+## Project description
 
-## Development server
+Post your ideas is a Single Page Application that allows people to create posts with an image on a social network. The user may create an account to be able to create, edit and delete posts while they can see other users' posts.
+This repository contains the front-end application consisting of three main views: the login page, the post's timeline, and the formulary for creating and editing pots. On the other hand, the backend has CRUD for users and post routes and a NoSQL database connection.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## About this project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I developed this project in a full-stack Udemy course. The technologies used for building the application were Angular in the front end and NodeJs in the backend, using MongoDB as a database to store user and post information.
 
-## Build
+I learned some core web development concepts, such as the authentication of clients to check if they are logged in or not and authorization to check if a user has the right to edit or delete a post (that could not be theirs). Moreover, pagination is an elegant way to avoid loading too many posts on a large dataset.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Which concerns the technologies, Angular has the Injection Dependency approach for each service used in the components, also a static typing that allows a more clean and secure coding process. Mongoose is an easy way to create database schemas for MongoDB and apply some queries for CRUD requisitions.
 
-## Running unit tests
+## Project setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install the dependencies:
 
-## Running end-to-end tests
+`npm run install`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run the front-end:
 
-## Further help
+`npm run start`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run the backend:
+
+`npm run start:serve`
