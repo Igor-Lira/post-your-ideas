@@ -1,18 +1,42 @@
 # Post Your Ideas!
 
+<img src="https://github.com/Igor-Lira/Igor-Lira/blob/main/public/post-your-ideas-banner.jpg" width="600px" />
+
+        video demo: https://www.youtube.com/embed/Tfnzh2fxGw8
+
 ## Project description
 
-Post your ideas is a Single Page Application that allows people to create posts with an image on a social network. The user may create an account to be able to create, edit and delete posts while they can see other users' posts.
-This repository contains the front-end application consisting of three main views: the login page, the post's timeline, and the formulary for creating and editing pots. On the other hand, the backend has CRUD for users and post routes and a NoSQL database connection.
-
+        This full-stack project allows users to post texts with images to share
+        their thoughts (similar to Twitter). The user may log in to create, edit
+        and delete posts. All posts are available for the community to see.
+        
+        The client-side consists of three main views: the login page, the post's
+        timeline, and the formulary for creating and editing posts.
+        
+        The server handles CRUD requests for users and posts supported by a
+        NoSQL database.
 
 ## About this project
 
-I developed this project in a full-stack Udemy course. The technologies used for building the application were Angular in the front end and NodeJs in the backend, using MongoDB as a database to store user and post information.
+        I developed this project when I took a full-stack Udemy course.
 
-I learned some core web development concepts, such as the authentication of clients to check if they are logged in or not and authorization to check if a user has the right to edit or delete a post (that could not be theirs). Moreover, pagination is an elegant way to avoid loading too many posts on a large dataset.
+        The server is set up with NodeJs, Express and MongoDB to store users and
+        post information. I created the database schemas with Mongoose because
+        it includes built-in type casting, validation and query building. The
+        server interacts with the database with CRUD (Create, Read, Update and
+        Delete) commands for User and Post models. I learned more about some
+        core concepts of web development: Authentication, authorization, and
+        pagination. Authentication to create tokens to check if a user is logged
+        in and is enabled to create posts. Authorization to check if the
+        logged-in user has permission to edit or delete a post. Pagination
+        avoids loading too many posts of a large dataset by adding limit and
+        offset in requests.
 
-Which concerns the technologies, Angular has the Injection Dependency approach for each service used in the components, also a static typing that allows a more clean and secure coding process. Mongoose is an easy way to create database schemas for MongoDB and apply some queries for CRUD requisitions.
+        On the client side, I created the core components and views with
+        Angular, and to increase productivity, I used the Angular material
+        design. Also, I implemented the logic to display the buttons (Create,
+        Edit, Delete) and Pages (Login, Log Out) according to the user
+        authorization and authentication.
 
 ## Project setup
 
